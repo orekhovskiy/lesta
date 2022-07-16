@@ -7,7 +7,6 @@ class CircularQueue:
         if len(self.queue) == self.max_size:
             return False
         self.queue.append(data)
-        print(self.queue)
         return True
 
     def dequeue(self):
