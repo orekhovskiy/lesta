@@ -1,17 +1,16 @@
 from collections import deque
-from typing import Iterable, Optional
 
 class CircularQueue:
-    def __init__(self, max_size: int) -> None:
+    def __init__(self, max_size):
         self.queue = deque(maxlen=max_size)
 
-    def enqueue(self, data: Iterable) -> bool:
+    def enqueue(self, data):
         if len(self.queue) == self.queue.maxlen:
             return False
         self.queue.append(data)
         return True
 
-    def dequeue(self) -> Optional[Iterable]:
+    def dequeue(self):
         if len(self.queue) > 0:
             return self.queue.popleft()
         return None
